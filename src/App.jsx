@@ -267,15 +267,28 @@ export default function App() {
 return (
     <div className="fixed inset-0 h-[100dvh] w-screen bg-[#131314] text-gray-100 flex flex-row overflow-hidden font-sans">
       {/* Simulation Scenario Overlay */}
+{/* Simulation Scenario Overlay - Optimiert für Mobile */}
       {showVignette && (
-        <div className="absolute inset-0 z-[60] flex items-center justify-center bg-[#131314]/90 backdrop-blur-sm px-4">
-          <div className="bg-[#1E1F20] border border-[#444746] p-8 rounded-3xl max-w-lg shadow-2xl">
-            <h2 className="text-xl font-medium mb-4 flex items-center gap-3"><Sparkles size={22} className="text-[#8AB4F8]" />{SCENARIO_TITLE}</h2>
-            <div className="text-[#E3E3E3] leading-relaxed mb-8 text-[15px] whitespace-pre-wrap min-h-[200px]">{renderFormattedText(scenarioStreamedText)}</div>
+        <div className="absolute inset-0 z-[60] flex items-center justify-center bg-[#131314]/90 backdrop-blur-sm px-4 py-6">
+          <div className="bg-[#1E1F20] border border-[#444746] p-6 md:p-8 rounded-3xl max-w-lg shadow-2xl flex flex-col max-h-[90vh]">
+            <h2 className="text-xl font-medium mb-4 flex items-center gap-3 shrink-0">
+              <Sparkles size={22} className="text-[#8AB4F8]" />
+              {SCENARIO_TITLE}
+            </h2>
+            
+            {/* Dieser Teil wird jetzt scrollbar, wenn der Text zu lang ist */}
+            <div className="text-[#E3E3E3] leading-relaxed mb-6 text-[15px] whitespace-pre-wrap overflow-y-auto pr-2 custom-scrollbar">
+              {renderFormattedText(scenarioStreamedText)}
+            </div>
+            
             {!isScenarioStreaming && (
-              <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-700">
-                <button onClick={startChat} className="w-full py-3.5 bg-[#8AB4F8] hover:bg-[#AECBFA] text-[#131314] font-medium rounded-full transition-all">Entendido. Iniciar chat.</button>
-                <p className="text-center text-xs text-gray-400 italic">Por favor, <strong className="font-bold text-gray-300">no refresque la página</strong> durante la conversación.</p>
+              <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-700 shrink-0">
+                <button onClick={startChat} className="w-full py-3.5 bg-[#8AB4F8] hover:bg-[#AECBFA] text-[#131314] font-medium rounded-full transition-all">
+                  Entendido. Iniciar chat.
+                </button>
+                <p className="text-center text-xs text-gray-400 italic">
+                  Por favor, <strong className="font-bold text-gray-300">no refresque la página</strong> durante la conversación.
+                </p>
               </div>
             )}
           </div>
