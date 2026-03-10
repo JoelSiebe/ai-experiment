@@ -89,7 +89,7 @@ const SCRIPT_4 = [
   { id: 8, bot: `Pensar en datos personales en una situación así puede generar incomodidad o dudas.\n\nAlgunos datos personales pueden ayudar a orientar qué opciones podrían ser pertinentes. Compartir esta información es opcional. También puede continuar sin proporcionarla.`, options: [{ label: "Alex García (Nombre)", next: 9, choice: "data_name" }, { label: "301-249-1243 (Teléfono)", next: 9, choice: "data_phone" }, { label: "05 19980512 34 (Cédula)", next: 9, choice: "data_id" }, { label: "No deseo proporcionar esta información.", next: 9, choice: "data_refused" }] },
   { id: 9, bot: `Entendido. Gracias por indicarlo.`, autoNext: 10, options: [] },
   { id: 10, bot: `Tomar una decisión en una situación así puede generar dudas.\n\nUsted decide si quiere iniciar el contacto con la ONG en este momento o no. Ambas opciones son válidas.\n\n¿Le gustaría iniciar el contacto?`, options: [{ label: "Sí, me gustaría iniciar el contacto.", next: 11, choice: "1" }, { label: "No, por el momento no.", next: 11, choice: "0" }] },
-  { id: 11, bot: `Muchas gracias por tomarse el tiempo para esta conversación. 🤍`, options: [] }
+  { id: 11, bot: `Muchas gracias. Ahora será dirigido a la encuesta.`, options: [] }
 ];
 // Mapping of the scripts
 const SCRIPTS = { 
