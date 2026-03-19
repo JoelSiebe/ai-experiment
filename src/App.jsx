@@ -26,7 +26,6 @@ const OUTRO_BUTTON = "Volver a la encuesta";
 
 /**
  * EXPERIMENTAL SCRIPTS
- * Define different bot behaviors for each condition here
  */
 const SCRIPT_1 = [
   { id: 1, bot: `Hola. Puedo proporcionar información general sobre las actividades de la ONG y sobre cómo funciona el contacto inicial.\n\n¿Le gustaría ver un resumen general del apoyo ofrecido o verificar si su situación entra en el alcance de la ONG?`, options: [{ label: "Me gustaría primero entender qué ofrecen.", next: 2, choice: "info_general" }, { label: "Prefiero verificar si esto se ajusta a mi situación.", next: 2.1, choice: "info_eligibility" }] },
